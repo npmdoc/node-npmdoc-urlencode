@@ -1,0 +1,961 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/node-modules/urlencode"
+
+    >urlencode (v1.1.0)</a>
+</h1>
+<h4>encodeURIComponent with charset</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode">module urlencode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.urlencode">
+            function <span class="apidocSignatureSpan"></span>urlencode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.decode">
+            function <span class="apidocSignatureSpan">urlencode.</span>decode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.encode">
+            function <span class="apidocSignatureSpan">urlencode.</span>encode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.parse">
+            function <span class="apidocSignatureSpan">urlencode.</span>parse
+            <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.stringify">
+            function <span class="apidocSignatureSpan">urlencode.</span>stringify
+            <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.toString">
+            function <span class="apidocSignatureSpan">urlencode.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode.decode">module urlencode.decode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.decode.decode">
+            function <span class="apidocSignatureSpan">urlencode.</span>decode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode.encode">module urlencode.encode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.encode.encode">
+            function <span class="apidocSignatureSpan">urlencode.</span>encode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.encode.decode">
+            function <span class="apidocSignatureSpan">urlencode.encode.</span>decode
+            <span class="apidocSignatureSpan">(str, charset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.encode.parse">
+            function <span class="apidocSignatureSpan">urlencode.encode.</span>parse
+            <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.encode.stringify">
+            function <span class="apidocSignatureSpan">urlencode.encode.</span>stringify
+            <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode.parse">module urlencode.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.parse.parse">
+            function <span class="apidocSignatureSpan">urlencode.</span>parse
+            <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode.stringify">module urlencode.stringify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.stringify.stringify">
+            function <span class="apidocSignatureSpan">urlencode.</span>stringify
+            <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urlencode.toString">module urlencode.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urlencode.toString.toString">
+            function <span class="apidocSignatureSpan">urlencode.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode" id="apidoc.module.urlencode">module urlencode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.urlencode" id="apidoc.element.urlencode.urlencode">
+        function <span class="apidocSignatureSpan"></span>urlencode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(str, charset) {
+  if (isUTF8(charset)) {
+    return encodeURIComponent(str);
+  }
+
+  var buf = iconv.encode(str, charset);
+  var encodeStr = &#x27;&#x27;;
+  var ch = &#x27;&#x27;;
+  for (var i = 0; i &#x3c; buf.length; i++) {
+    ch = buf[i].toString(&#x27;16&#x27;);
+    if (ch.length === 1) {
+      ch = &#x27;0&#x27; + ch;
+    }
+    encodeStr += &#x27;%&#x27; + ch;
+  }
+  encodeStr = encodeStr.toUpperCase();
+  return encodeStr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.decode" id="apidoc.element.urlencode.decode">
+        function <span class="apidocSignatureSpan">urlencode.</span>decode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(str, charset) {
+  if (isUTF8(charset)) {
+    return decodeURIComponent(str);
+  }
+
+  var bytes = [];
+  for (var i = 0; i &#x3c; str.length; ) {
+    if (str[i] === &#x27;%&#x27;) {
+      i++;
+      bytes.push(parseInt(str.substring(i, i + 2), 16));
+      i += 2;
+    } else {
+      bytes.push(str.charCodeAt(i));
+      i++;
+    }
+  }
+  var buf = new Buffer(bytes);
+  return iconv.decode(buf, charset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var urlencode = require(&#x27;urlencode&#x27;);
+
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.<span class="apidocCodeKeywordSpan">decode</span>(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.encode" id="apidoc.element.urlencode.encode">
+        function <span class="apidocSignatureSpan">urlencode.</span>encode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(str, charset) {
+  if (isUTF8(charset)) {
+    return encodeURIComponent(str);
+  }
+
+  var buf = iconv.encode(str, charset);
+  var encodeStr = &#x27;&#x27;;
+  var ch = &#x27;&#x27;;
+  for (var i = 0; i &#x3c; buf.length; i++) {
+    ch = buf[i].toString(&#x27;16&#x27;);
+    if (ch.length === 1) {
+      ch = &#x27;0&#x27; + ch;
+    }
+    encodeStr += &#x27;%&#x27; + ch;
+  }
+  encodeStr = encodeStr.toUpperCase();
+  return encodeStr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.parse" id="apidoc.element.urlencode.parse">
+        function <span class="apidocSignatureSpan">urlencode.</span>parse
+        <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(qs, sep, eq, options) {
+  if (typeof sep === &#x27;object&#x27;) {
+    // parse(qs, options)
+    options = sep;
+    sep = null;
+  }
+
+  sep = sep || &#x27;&#x26;&#x27;;
+  eq = eq || &#x27;=&#x27;;
+  var obj = {};
+
+  if (typeof qs !== &#x27;string&#x27; || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  var charset = null;
+  if (options) {
+    if (typeof options.maxKeys === &#x27;number&#x27;) {
+      maxKeys = options.maxKeys;
+    }
+    if (typeof options.charset === &#x27;string&#x27;) {
+      charset = options.charset;
+    }
+  }
+
+  var len = qs.length;
+  // maxKeys &#x3c;= 0 means that we should not limit keys count
+  if (maxKeys &#x3e; 0 &#x26;&#x26; len &#x3e; maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i &#x3c; len; ++i) {
+    var x = qs[i].replace(regexp, &#x27;%20&#x27;);
+    var idx = x.indexOf(eq);
+    var kstr, vstr, k, v;
+
+    if (idx &#x3e;= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = &#x27;&#x27;;
+    }
+
+    if (kstr &#x26;&#x26; kstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        k = decode(kstr, charset);
+      } catch (e) {
+        k = kstr;
+      }
+    } else {
+      k = kstr;
+    }
+
+    if (vstr &#x26;&#x26; vstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        v = decode(vstr, charset);
+      } catch (e) {
+        v = vstr;
+      }
+    } else {
+      v = vstr;
+    }
+
+    if (!has(obj, k)) {
+      obj[k] = v;
+    } else if (Array.isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.decode(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.<span class="apidocCodeKeywordSpan">parse</span>(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#
+x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.stringify(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.stringify" id="apidoc.element.urlencode.stringify">
+        function <span class="apidocSignatureSpan">urlencode.</span>stringify
+        <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (obj, prefix, options) {
+  if (typeof prefix !== &#x27;string&#x27;) {
+    options = prefix || {};
+    prefix = null;
+  }
+  var charset = options.charset || &#x27;utf-8&#x27;;
+  if (Array.isArray(obj)) {
+    return stringifyArray(obj, prefix, options);
+  } else if (&#x27;[object Object]&#x27; === {}.toString.call(obj)) {
+    return stringifyObject(obj, prefix, options);
+  } else if (&#x27;string&#x27; === typeof obj) {
+    return stringifyString(obj, prefix, options);
+  } else {
+    return prefix + &#x27;=&#x27; + encodeComponent(String(obj), charset);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.<span class="apidocCodeKeywordSpan">stringify</span>(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+
+## Benchmark
+
+### urlencode(str, encoding)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.toString" id="apidoc.element.urlencode.toString">
+        function <span class="apidocSignatureSpan">urlencode.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode.decode" id="apidoc.module.urlencode.decode">module urlencode.decode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.decode.decode" id="apidoc.element.urlencode.decode.decode">
+        function <span class="apidocSignatureSpan">urlencode.</span>decode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(str, charset) {
+  if (isUTF8(charset)) {
+    return decodeURIComponent(str);
+  }
+
+  var bytes = [];
+  for (var i = 0; i &#x3c; str.length; ) {
+    if (str[i] === &#x27;%&#x27;) {
+      i++;
+      bytes.push(parseInt(str.substring(i, i + 2), 16));
+      i += 2;
+    } else {
+      bytes.push(str.charCodeAt(i));
+      i++;
+    }
+  }
+  var buf = new Buffer(bytes);
+  return iconv.decode(buf, charset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var urlencode = require(&#x27;urlencode&#x27;);
+
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.<span class="apidocCodeKeywordSpan">decode</span>(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode.encode" id="apidoc.module.urlencode.encode">module urlencode.encode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.encode.encode" id="apidoc.element.urlencode.encode.encode">
+        function <span class="apidocSignatureSpan">urlencode.</span>encode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(str, charset) {
+  if (isUTF8(charset)) {
+    return encodeURIComponent(str);
+  }
+
+  var buf = iconv.encode(str, charset);
+  var encodeStr = &#x27;&#x27;;
+  var ch = &#x27;&#x27;;
+  for (var i = 0; i &#x3c; buf.length; i++) {
+    ch = buf[i].toString(&#x27;16&#x27;);
+    if (ch.length === 1) {
+      ch = &#x27;0&#x27; + ch;
+    }
+    encodeStr += &#x27;%&#x27; + ch;
+  }
+  encodeStr = encodeStr.toUpperCase();
+  return encodeStr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.encode.decode" id="apidoc.element.urlencode.encode.decode">
+        function <span class="apidocSignatureSpan">urlencode.encode.</span>decode
+        <span class="apidocSignatureSpan">(str, charset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(str, charset) {
+  if (isUTF8(charset)) {
+    return decodeURIComponent(str);
+  }
+
+  var bytes = [];
+  for (var i = 0; i &#x3c; str.length; ) {
+    if (str[i] === &#x27;%&#x27;) {
+      i++;
+      bytes.push(parseInt(str.substring(i, i + 2), 16));
+      i += 2;
+    } else {
+      bytes.push(str.charCodeAt(i));
+      i++;
+    }
+  }
+  var buf = new Buffer(bytes);
+  return iconv.decode(buf, charset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var urlencode = require(&#x27;urlencode&#x27;);
+
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.<span class="apidocCodeKeywordSpan">decode</span>(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.encode.parse" id="apidoc.element.urlencode.encode.parse">
+        function <span class="apidocSignatureSpan">urlencode.encode.</span>parse
+        <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(qs, sep, eq, options) {
+  if (typeof sep === &#x27;object&#x27;) {
+    // parse(qs, options)
+    options = sep;
+    sep = null;
+  }
+
+  sep = sep || &#x27;&#x26;&#x27;;
+  eq = eq || &#x27;=&#x27;;
+  var obj = {};
+
+  if (typeof qs !== &#x27;string&#x27; || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  var charset = null;
+  if (options) {
+    if (typeof options.maxKeys === &#x27;number&#x27;) {
+      maxKeys = options.maxKeys;
+    }
+    if (typeof options.charset === &#x27;string&#x27;) {
+      charset = options.charset;
+    }
+  }
+
+  var len = qs.length;
+  // maxKeys &#x3c;= 0 means that we should not limit keys count
+  if (maxKeys &#x3e; 0 &#x26;&#x26; len &#x3e; maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i &#x3c; len; ++i) {
+    var x = qs[i].replace(regexp, &#x27;%20&#x27;);
+    var idx = x.indexOf(eq);
+    var kstr, vstr, k, v;
+
+    if (idx &#x3e;= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = &#x27;&#x27;;
+    }
+
+    if (kstr &#x26;&#x26; kstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        k = decode(kstr, charset);
+      } catch (e) {
+        k = kstr;
+      }
+    } else {
+      k = kstr;
+    }
+
+    if (vstr &#x26;&#x26; vstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        v = decode(vstr, charset);
+      } catch (e) {
+        v = vstr;
+      }
+    } else {
+      v = vstr;
+    }
+
+    if (!has(obj, k)) {
+      obj[k] = v;
+    } else if (Array.isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.decode(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.<span class="apidocCodeKeywordSpan">parse</span>(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#
+x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.stringify(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.encode.stringify" id="apidoc.element.urlencode.encode.stringify">
+        function <span class="apidocSignatureSpan">urlencode.encode.</span>stringify
+        <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (obj, prefix, options) {
+  if (typeof prefix !== &#x27;string&#x27;) {
+    options = prefix || {};
+    prefix = null;
+  }
+  var charset = options.charset || &#x27;utf-8&#x27;;
+  if (Array.isArray(obj)) {
+    return stringifyArray(obj, prefix, options);
+  } else if (&#x27;[object Object]&#x27; === {}.toString.call(obj)) {
+    return stringifyObject(obj, prefix, options);
+  } else if (&#x27;string&#x27; === typeof obj) {
+    return stringifyString(obj, prefix, options);
+  } else {
+    return prefix + &#x27;=&#x27; + encodeComponent(String(obj), charset);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.<span class="apidocCodeKeywordSpan">stringify</span>(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+
+## Benchmark
+
+### urlencode(str, encoding)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode.parse" id="apidoc.module.urlencode.parse">module urlencode.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.parse.parse" id="apidoc.element.urlencode.parse.parse">
+        function <span class="apidocSignatureSpan">urlencode.</span>parse
+        <span class="apidocSignatureSpan">(qs, sep, eq, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(qs, sep, eq, options) {
+  if (typeof sep === &#x27;object&#x27;) {
+    // parse(qs, options)
+    options = sep;
+    sep = null;
+  }
+
+  sep = sep || &#x27;&#x26;&#x27;;
+  eq = eq || &#x27;=&#x27;;
+  var obj = {};
+
+  if (typeof qs !== &#x27;string&#x27; || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  var charset = null;
+  if (options) {
+    if (typeof options.maxKeys === &#x27;number&#x27;) {
+      maxKeys = options.maxKeys;
+    }
+    if (typeof options.charset === &#x27;string&#x27;) {
+      charset = options.charset;
+    }
+  }
+
+  var len = qs.length;
+  // maxKeys &#x3c;= 0 means that we should not limit keys count
+  if (maxKeys &#x3e; 0 &#x26;&#x26; len &#x3e; maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i &#x3c; len; ++i) {
+    var x = qs[i].replace(regexp, &#x27;%20&#x27;);
+    var idx = x.indexOf(eq);
+    var kstr, vstr, k, v;
+
+    if (idx &#x3e;= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = &#x27;&#x27;;
+    }
+
+    if (kstr &#x26;&#x26; kstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        k = decode(kstr, charset);
+      } catch (e) {
+        k = kstr;
+      }
+    } else {
+      k = kstr;
+    }
+
+    if (vstr &#x26;&#x26; vstr.indexOf(&#x27;%&#x27;) &#x3e;= 0) {
+      try {
+        v = decode(vstr, charset);
+      } catch (e) {
+        v = vstr;
+      }
+    } else {
+      v = vstr;
+    }
+
+    if (!has(obj, k)) {
+      obj[k] = v;
+    } else if (Array.isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(urlencode(&#x27;苏千&#x27;)); // default is utf8
+console.log(urlencode(&#x27;苏千&#x27;, &#x27;gbk&#x27;)); // &#x27;%CB%D5%C7%A7&#x27;
+
+// decode gbk
+urlencode.decode(&#x27;%CB%D5%C7%A7&#x27;, &#x27;gbk&#x27;); // &#x27;苏千&#x27;
+
+// parse gbk querystring
+urlencode.<span class="apidocCodeKeywordSpan">parse</span>(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#
+x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.stringify(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode.stringify" id="apidoc.module.urlencode.stringify">module urlencode.stringify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.stringify.stringify" id="apidoc.element.urlencode.stringify.stringify">
+        function <span class="apidocSignatureSpan">urlencode.</span>stringify
+        <span class="apidocSignatureSpan">(obj, prefix, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (obj, prefix, options) {
+  if (typeof prefix !== &#x27;string&#x27;) {
+    options = prefix || {};
+    prefix = null;
+  }
+  var charset = options.charset || &#x27;utf-8&#x27;;
+  if (Array.isArray(obj)) {
+    return stringifyArray(obj, prefix, options);
+  } else if (&#x27;[object Object]&#x27; === {}.toString.call(obj)) {
+    return stringifyObject(obj, prefix, options);
+  } else if (&#x27;string&#x27; === typeof obj) {
+    return stringifyString(obj, prefix, options);
+  } else {
+    return prefix + &#x27;=&#x27; + encodeComponent(String(obj), charset);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// parse gbk querystring
+urlencode.parse(&#x27;nick=%CB%D5%C7%A7&#x27;, {charset: &#x27;gbk&#x27;}); // {nick: &#x27;苏千&#x27;}
+
+// stringify obj with gbk encoding
+var str = &#x27;x[y][0][v][w]=&#x27; + urlencode(&#x27;雾空&#x27;, &#x27;gbk&#x27;); // x[y][0][v][w]=%CE%ED%BF%D5
+var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : &#x27;雾空&#x27;}}]}};
+urlencode.<span class="apidocCodeKeywordSpan">stringify</span>(obj, {charset: &#x27;gbk&#x27;}).should.equal(str);
+
+```
+
+## Benchmark
+
+### urlencode(str, encoding)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urlencode.toString" id="apidoc.module.urlencode.toString">module urlencode.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urlencode.toString.toString" id="apidoc.element.urlencode.toString.toString">
+        function <span class="apidocSignatureSpan">urlencode.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
