@@ -1,6 +1,6 @@
 # npmdoc-urlencode
 
-#### api documentation for  [urlencode (v1.1.0)](https://github.com/node-modules/urlencode)  [![npm package](https://img.shields.io/npm/v/npmdoc-urlencode.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-urlencode) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-urlencode.svg)](https://travis-ci.org/npmdoc/node-npmdoc-urlencode)
+#### basic api documentation for  [urlencode (v1.1.0)](https://github.com/node-modules/urlencode)  [![npm package](https://img.shields.io/npm/v/npmdoc-urlencode.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-urlencode) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-urlencode.svg)](https://travis-ci.org/npmdoc/node-npmdoc-urlencode)
 
 #### encodeURIComponent with charset
 
@@ -104,7 +104,8 @@
         "test-cov": "istanbul cover node_modules/.bin/_mocha -- -t 20000 -r should test/*.test.js",
         "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- -t 20000 -r should test/*.test.js"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
