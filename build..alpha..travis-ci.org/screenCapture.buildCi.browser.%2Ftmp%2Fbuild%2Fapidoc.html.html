@@ -249,7 +249,23 @@ var obj =  {'x' : {'y' : [{'v' : {'w' : 'é›¾ç©º'}}]}};
   encodeStr = encodeStr.toUpperCase();
   return encodeStr;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function encode(str, charset) {
+if (isUTF8(charset)) {
+  return encodeURIComponent(str);
+}
+
+var buf = iconv.<span class="apidocCodeKeywordSpan">encode</span>(str, charset);
+var encodeStr = '';
+var ch = '';
+for (var i = 0; i &lt; buf.length; i++) {
+  ch = buf[i].toString('16');
+  if (ch.length === 1) {
+    ch = '0' + ch;
+  }
+...</pre></li>
     </ul>
 
 
@@ -435,7 +451,23 @@ urlencode.<span class="apidocCodeKeywordSpan">stringify</span>(obj, {charset: 'g
   encodeStr = encodeStr.toUpperCase();
   return encodeStr;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function encode(str, charset) {
+if (isUTF8(charset)) {
+  return encodeURIComponent(str);
+}
+
+var buf = iconv.<span class="apidocCodeKeywordSpan">encode</span>(str, charset);
+var encodeStr = '';
+var ch = '';
+for (var i = 0; i &lt; buf.length; i++) {
+  ch = buf[i].toString('16');
+  if (ch.length === 1) {
+    ch = '0' + ch;
+  }
+...</pre></li>
     </ul>
 
 

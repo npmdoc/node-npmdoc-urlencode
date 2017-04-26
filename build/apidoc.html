@@ -256,7 +256,23 @@ var obj =  {&#x27;x&#x27; : {&#x27;y&#x27; : [{&#x27;v&#x27; : {&#x27;w&#x27; : 
   encodeStr = encodeStr.toUpperCase();
   return encodeStr;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function encode(str, charset) {
+if (isUTF8(charset)) {
+  return encodeURIComponent(str);
+}
+
+var buf = iconv.<span class="apidocCodeKeywordSpan">encode</span>(str, charset);
+var encodeStr = &#x27;&#x27;;
+var ch = &#x27;&#x27;;
+for (var i = 0; i &#x3c; buf.length; i++) {
+  ch = buf[i].toString(&#x27;16&#x27;);
+  if (ch.length === 1) {
+    ch = &#x27;0&#x27; + ch;
+  }
+...</pre></li>
     </ul>
 
 
@@ -442,7 +458,23 @@ urlencode.<span class="apidocCodeKeywordSpan">stringify</span>(obj, {charset: &#
   encodeStr = encodeStr.toUpperCase();
   return encodeStr;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function encode(str, charset) {
+if (isUTF8(charset)) {
+  return encodeURIComponent(str);
+}
+
+var buf = iconv.<span class="apidocCodeKeywordSpan">encode</span>(str, charset);
+var encodeStr = &#x27;&#x27;;
+var ch = &#x27;&#x27;;
+for (var i = 0; i &#x3c; buf.length; i++) {
+  ch = buf[i].toString(&#x27;16&#x27;);
+  if (ch.length === 1) {
+    ch = &#x27;0&#x27; + ch;
+  }
+...</pre></li>
     </ul>
 
 
